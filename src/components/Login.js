@@ -70,12 +70,14 @@ export default class Login extends Component {
               </div>
             </div>
             <div className="extras">
-              <p>Forgot your password?</p>
+              <p>
+                <a href="#">Forgot your password?</a>
+              </p>
               <button className="btn register">Register</button>
             </div>
           </footer>
         </form>
-        <h4 className="quest">Quest</h4>
+        <h4 className="quest">Quest&copy;</h4>
       </div>
     );
   }

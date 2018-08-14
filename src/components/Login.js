@@ -7,7 +7,7 @@ import {
   FaLinkedin,
   FaTwitterSquare
 } from "react-icons/fa";
-import '../styles/Login.css';
+import "../styles/Login.css";
 
 export default class Login extends Component {
   state = {
@@ -24,17 +24,27 @@ export default class Login extends Component {
         <h2 className="title">Login</h2>
         <form onSubmit={this.handleLogin} className="login">
           <div className="login__container">
-            <input type="text" name="username" required="required" />
-            <label for="username" className="login__details">
+            <input
+              type="text"
+              name="username"
+              required="required"
+              placeholder="Username"
+             />
+            {/*<label for="username" className="login__details">
               Username
-            </label>
+    </label>*/}
             <div className="bar" />
           </div>
           <div className="login__container">
-            <input type="password" name="password" required="required" />
-            <label for="password" className="login__details">
+            <input
+              type="password"
+              name="password"
+              required="required"
+              placeholder="Password"
+            />
+            {/*<label for="password" className="login__details">
               Password
-            </label>
+  </label>*/}
             <div className="bar" />
           </div>
           <label for="checkbox" className="remember login__container">

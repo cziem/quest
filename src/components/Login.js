@@ -5,7 +5,8 @@ import {
   FaGoogle,
   FaInstagram,
   FaLinkedin,
-  FaTwitterSquare
+  FaTwitterSquare,
+  FaChevronRight
 } from "react-icons/fa";
 import "../styles/Login.css";
 
@@ -29,7 +30,7 @@ export default class Login extends Component {
               name="username"
               required="required"
               placeholder="Username"
-             />
+            />
             {/*<label for="username" className="login__details">
               Username
     </label>*/}
@@ -47,12 +48,14 @@ export default class Login extends Component {
   </label>*/}
             <div className="bar" />
           </div>
-          <label for="checkbox" className="remember login__container">
+          <label for="checkbox" className="remember">
             <input type="checkbox" />
-            Remember me
+            <span>Remember me</span>
           </label>
           <div className="login__container button">
-            <button className="login-button btn">Let me in </button>
+            <button className="login-button btn">
+              Let me in <FaChevronRight className="arrow-right"/>
+            </button>
           </div>
           <footer className="login__container">
             <p>or login with</p>

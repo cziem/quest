@@ -57,15 +57,17 @@ export default class Login extends Component {
               Let me in <FaChevronRight className="arrow-right"/>
             </button>
           </div>
-          <footer className="login__container">
-            <p>or login with</p>
+          <footer className="login__container-footer">
             <div className="socials">
-              <FaFacebook />
-              <FaGithub />
-              <FaGoogle />
-              <FaInstagram />
-              <FaLinkedin />
-              <FaTwitterSquare />
+              <p>or login with</p>
+              <div className="iconholder">
+                <FaFacebook className="social-icons"/>
+                <FaGithub className="social-icons"/>
+                <FaGoogle className="social-icons"/>
+                <FaInstagram className="social-icons"/>
+                <FaLinkedin className="social-icons"/>
+                <FaTwitterSquare className="social-icons"/>
+              </div>
             </div>
             <div className="extras">
               <p>Forgot your password?</p>
@@ -73,6 +75,7 @@ export default class Login extends Component {
             </div>
           </footer>
         </form>
+        <h4 className="quest">Quest</h4>
       </div>
     );
   }

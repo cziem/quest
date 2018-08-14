@@ -18,7 +18,7 @@ body
 
 .title
 {
-  padding: 1rem 0 .5rem 2rem;
+  padding: .2rem 0 .5rem 2rem;
   border-left: 5px solid #ed2553;
   color: #ed2553;
   text-transform: uppercase;
@@ -122,4 +122,51 @@ form
   border: none;
   cursor: pointer;
   transition: .2s ease;
+}
+
+.login__container-footer
+{
+  background: #0a416e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.socials
+{
+  width: 90%;
+  display: flex;
+  box-sizing: border-box;
+  padding: .5rem;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid #092d4b;
+}
+
+.socials p
+{
+  color: #dbdbdb;
+  font-weight: 500;
+}
+
+.iconholder
+{
+  display: flex;
+  justify-content: space-around;
+  flex-grow: 1
+}
+
+.social-icons
+{
+  color: #cfcfcf;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: .2s ease-in-out;
+}
+
+.social-icons:hover
+{
+  color: white;
+  transform: scale(1.5);
 }

@@ -47,7 +47,7 @@ form
   border: 0;
   color: #212121;
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 400;
   height: 2.3rem;
   outline: none;
   width: 100%;
@@ -72,7 +72,7 @@ form
   left: 2.5rem;
   bottom: 0;
   height: 1px;
-  background: #757575;
+  background: rgba(117, 117, 117, 0.824);
   width: 90%;
 }
 

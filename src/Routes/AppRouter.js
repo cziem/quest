@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Home from '../components/Home';
 import Login from '../components/Login';
 import Registration from '../components/Registration';
 import HandleEntry from '../components/HandleEntry';
@@ -10,7 +11,8 @@ const AppRouter = () => (
     <div>
       <HandleEntry />
       <Switch>
-        <Route path="/" component={Login} exact={true} />
+        <Route path="/" component={Home} exact={true} />
+        <Route path="/login" component={Login} exact={true} />
         <Route path="/registration" component={Registration} exact={true} />
         <Route component={NotFound} />
       </Switch>

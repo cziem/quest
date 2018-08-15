@@ -75,7 +75,7 @@ export default class Registration extends Component {
             </div>
             <div className="extras">
               <p>Already registerd?</p>
-              <Link to="/" className="btn register">Login</Link>
+              <Link to="/login" className="btn register">Login</Link>
             </div>
           </footer>
         <h4 className="quest">Quest&copy;</h4>

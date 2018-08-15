@@ -189,6 +189,7 @@ form
   color: white;
   padding: .7rem;
   width: 40%;
+  text-align: center;
 }
 
 .register:hover

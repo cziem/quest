@@ -58,6 +58,7 @@ export default class Login extends Component {
               Let me in <FaChevronRight className="arrow-right"/>
             </button>
           </div>
+          </form>
           <footer className="login__container-footer">
             <div className="socials">
               <p>or login with</p>
@@ -74,12 +75,9 @@ export default class Login extends Component {
               <p>
                 <a href="#">Forgot your password?</a>
               </p>
-              <button className="btn register">
-                <Link to="/Registration.js">Register</Link>
-              </button>
+              <Link to="/registration" className="btn register">Register</Link>
             </div>
           </footer>
-        </form>
         <h4 className="quest">Quest&copy;</h4>
       </div>
     );

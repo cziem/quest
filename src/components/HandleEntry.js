@@ -1,14 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../styles/HandleEntry.css';
-import Login from './Login';
-import Registration from './Registration';
 
-export default class HandleEntry extends Component {
-  render() {
-    return (
-      <div className="">
-        <Login />
-      </div>
-    )
-  }
-}
+const HandleEntry = () => (
+  <div className='background'></div>
+)
+
+export default HandleEntry;

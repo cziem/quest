@@ -8,6 +8,7 @@ import {
   FaTwitterSquare,
   FaChevronRight
 } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 export default class Registration extends Component {
   handleRegister = (e) => {
@@ -59,6 +60,7 @@ export default class Registration extends Component {
               Register me <FaChevronRight className="arrow-right" />
             </button>
           </div>
+          </form>
           <footer className="login__container-footer">
             <div className="socials">
               <p>or register with</p>
@@ -71,8 +73,11 @@ export default class Registration extends Component {
                 <FaTwitterSquare className="social-icons" />
               </div>
             </div>
+            <div className="extras">
+              <p>Already registerd?</p>
+              <Link to="/" className="btn register">Login</Link>
+            </div>
           </footer>
-        </form>
         <h4 className="quest">Quest&copy;</h4>
       </div>
     )

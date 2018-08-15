@@ -3,12 +3,14 @@ import { Link } from "react-router-dom";
 import { IoIosHome } from "react-icons/io";
 
 const NotFound = () => (
-  <div style={styles.container}>
-    <h3>404 Error. Page not found!</h3>
-    <div style={styles.wakanda} className="wakanda">
-      <Link to="/">
-        Let's Go <IoIosHome style={styles.icons} />
-      </Link>
+  <div className="body">
+    <div style={styles.container}>
+      <h3>404 Error. Page not found!</h3>
+      <div style={styles.wakanda} className="wakanda">
+        <Link to="/">
+          Let's Go <IoIosHome style={styles.icons} />
+        </Link>
+      </div>
     </div>
   </div>
 );

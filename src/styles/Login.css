@@ -1,5 +1,6 @@
-body
+.body
 {
+  background: linear-gradient(260deg, #0784b6, #044377);
   display: flex;
   justify-content: center;
   align-items: center;

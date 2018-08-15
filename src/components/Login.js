@@ -22,63 +22,65 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div className="container__main">
-        <h2 className="title">Login</h2>
-        <form onSubmit={this.handleLogin} className="login">
-          <div className="login__container">
-            <input
-              type="text"
-              name="username"
-              required="required"
-              placeholder="Username"
-            />
-            {/*<label for="username" className="login__details">
-              Username
+      <div className="body">
+        <div className="container__main">
+          <h2 className="title">Login</h2>
+          <form onSubmit={this.handleLogin} className="login">
+            <div className="login__container">
+              <input
+                type="text"
+                name="username"
+                required="required"
+                placeholder="Username"
+              />
+              {/*<label for="username" className="login__details">
+                Username
+      </label>*/}
+              <div className="bar" />
+            </div>
+            <div className="login__container">
+              <input
+                type="password"
+                name="password"
+                required="required"
+                placeholder="Password"
+              />
+              {/*<label for="password" className="login__details">
+                Password
     </label>*/}
-            <div className="bar" />
-          </div>
-          <div className="login__container">
-            <input
-              type="password"
-              name="password"
-              required="required"
-              placeholder="Password"
-            />
-            {/*<label for="password" className="login__details">
-              Password
-  </label>*/}
-            <div className="bar" />
-          </div>
-          <label for="checkbox" className="remember">
-            <input type="checkbox" />
-            <span>Remember me</span>
-          </label>
-          <div className="login__container button">
-            <button className="login-button btn">
-              Let me in <FaChevronRight className="arrow-right"/>
-            </button>
-          </div>
-          </form>
-          <footer className="login__container-footer">
-            <div className="socials">
-              <p>or login with</p>
-              <div className="iconholder">
-                <FaFacebook className="social-icons"/>
-                <FaGithub className="social-icons"/>
-                <FaGoogle className="social-icons"/>
-                <FaInstagram className="social-icons"/>
-                <FaLinkedin className="social-icons"/>
-                <FaTwitterSquare className="social-icons"/>
+              <div className="bar" />
+            </div>
+            <label for="checkbox" className="remember">
+              <input type="checkbox" />
+              <span>Remember me</span>
+            </label>
+            <div className="login__container button">
+              <button className="login-button btn">
+                Let me in <FaChevronRight className="arrow-right"/>
+              </button>
+            </div>
+            </form>
+            <footer className="login__container-footer">
+              <div className="socials">
+                <p>or login with</p>
+                <div className="iconholder">
+                  <FaFacebook className="social-icons"/>
+                  <FaGithub className="social-icons"/>
+                  <FaGoogle className="social-icons"/>
+                  <FaInstagram className="social-icons"/>
+                  <FaLinkedin className="social-icons"/>
+                  <FaTwitterSquare className="social-icons"/>
+                </div>
               </div>
-            </div>
-            <div className="extras">
-              <p>
-                <a href="#">Forgot your password?</a>
-              </p>
-              <Link to="/registration" className="btn register">Register</Link>
-            </div>
-          </footer>
-        <h4 className="quest">Quest&copy;</h4>
+              <div className="extras">
+                <p>
+                  <a href="#">Forgot your password?</a>
+                </p>
+                <Link to="/registration" className="btn register">Register</Link>
+              </div>
+            </footer>
+          <h4 className="quest">Quest&copy;</h4>
+        </div>
       </div>
     );
   }

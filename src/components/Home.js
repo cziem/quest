@@ -12,19 +12,22 @@ const Home = () => (
 
     <main>
       <aside className="left">
-        <h1>Express &bull; Inspire &bull; Share</h1>
+        <h1>Express &bull; Inspire <span className="white">&bull; Share</span>
+        </h1>
 
-        <p className="info">
-          Quest enhances your social health by taking away the worries of keeping up with every trend on every social platform.
-        </p>
+        <section className="wrap">
+          <p className="info">
+            Quest enhances your social health by taking away the worries of keeping up with every trend on every social platform.
+          </p>
 
-        <p className="description">
-          One post, one message, one compose...
-          <span> multiple share <IoIosSend /></span>
-        </p>
+          <p className="description">
+            One post, one message, one compose...
+            <span> multiple share <IoIosSend /></span>
+          </p>
 
-        <section className="action">
-          <Link to='/login'>Let's Go</Link>
+          <section className="action">
+            <Link to='/login'>Let's Go</Link>
+          </section>
         </section>
       </aside>
 

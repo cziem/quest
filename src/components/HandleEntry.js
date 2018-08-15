@@ -7,8 +7,7 @@ export default class HandleEntry extends Component {
   render() {
     return (
       <div className="">
-        {/*<Login />*/}
-        <Registration />
+        <Login />
       </div>
     )
   }

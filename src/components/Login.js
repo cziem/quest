@@ -9,6 +9,7 @@ import {
   FaChevronRight
 } from "react-icons/fa";
 import "../styles/Login.css";
+import { Link } from 'react-router-dom';
 
 export default class Login extends Component {
   state = {
@@ -73,7 +74,9 @@ export default class Login extends Component {
               <p>
                 <a href="#">Forgot your password?</a>
               </p>
-              <button className="btn register">Register</button>
+              <button className="btn register">
+                <Link to="/Registration.js">Register</Link>
+              </button>
             </div>
           </footer>
         </form>

@@ -3,13 +3,11 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from '../components/Home';
 import Login from '../components/Login';
 import Registration from '../components/Registration';
-import HandleEntry from '../components/HandleEntry';
 import NotFound from '../components/NotFound';
 
 const AppRouter = () => (
   <BrowserRouter>
     <div>
-      <HandleEntry />
       <Switch>
         <Route path="/" component={Home} exact={true} />
         <Route path="/login" component={Login} exact={true} />

@@ -4,6 +4,7 @@ import Home from '../components/Home';
 import Login from '../components/Login';
 import Registration from '../components/Registration';
 import NotFound from '../components/NotFound';
+import Dashboard from "../components/Dashboard";
 
 const AppRouter = () => (
   <BrowserRouter>
@@ -12,6 +13,7 @@ const AppRouter = () => (
         <Route path="/" component={Home} exact={true} />
         <Route path="/login" component={Login} exact={true} />
         <Route path="/registration" component={Registration} exact={true} />
+        <Route path="/dashboard" component={Dashboard} exact={true} />
         <Route component={NotFound} />
       </Switch>
     </div>

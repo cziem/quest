@@ -1,11 +1,21 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import ActivityPane from "./ActivityPane";
 
 export default class Dashboard extends Component {
   render() {
     return (
-      <div className="dashboard">
-        <h1>This is coming from the Dashboard</h1>
+      <div style={style.dashboard}>
+        {/* Activity Panel */}
+        <ActivityPane />
       </div>
     );
   }
-};
+}
+
+const style = {
+  dashboard: {
+    marginTop: '-1.2rem', // FIXME
+    height: '100vh',
+    width: '100%'
+  }
+}

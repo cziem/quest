@@ -9,10 +9,28 @@ import {
   FaChevronRight
 } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import Axios from 'axios';
 
 export default class Registration extends Component {
   handleRegister = (e) => {
     e.preventDefault()
+
+    console.log(name)
+
+    // put validation of the input elements here and the send off to the backend
+
+    // Axios({
+    //   method: 'post',
+    //   url: 'http://localhost:3000/registration',
+    //   data: {
+    //     name,
+    //     username,
+    //     email,
+    //     password
+    //   },
+    // }).then(res => {
+    //   console.log(res)
+    // })
   }
   render() {
     return (

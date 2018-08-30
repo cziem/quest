@@ -30,24 +30,16 @@ export default class Login extends Component {
               <input
                 type="text"
                 name="username"
-                required="required"
                 placeholder="Username"
               />
-              {/*<label for="username" className="login__details">
-                Username
-      </label>*/}
               <div className="bar" />
             </div>
             <div className="login__container">
               <input
                 type="password"
                 name="password"
-                required="required"
                 placeholder="Password"
               />
-              {/*<label for="password" className="login__details">
-                Password
-    </label>*/}
               <div className="bar" />
             </div>
             <label for="checkbox" className="remember">

@@ -13,12 +13,17 @@ import Axios from "axios";
 
 export default class Registration extends Component {
   state = {
-    isValid: false,
     user: {
-      name,
-      username,
-      email,
-      password
+      name: "",
+      username: "",
+      email: "",
+      password: ""
+    },
+    errors: {
+      name: "",
+      username: "",
+      email: "",
+      password: ""
     }
   };
 
@@ -33,10 +38,36 @@ export default class Registration extends Component {
     this.setState(() => ({ user }));
   };
 
+  handleValidation = () => {
+    let isValid = true;
+    let {errors} = this.state;
+    let { name, username, email, password } = this.state.user;
+
+    // if (name === '') {
+    //   isValid = false;
+    //   errors.name = "You cannot leave this empty";
+    //   console.log(name)
+    // }
+
+    if (typeof name !== "undefined") {
+      if (!name.match(/^[a-zA-Z]+$/g)) {
+        isValid = false;
+        errors.name = "Your name cannot contain numbers";
+      }
+    }
+
+    this.setState(() => ({ errors }));
+    return isValid;
+  };
+
   handleRegister = e => {
     e.preventDefault();
 
-    console.log(name);
+    this.handleValidation();
+
+    console.log(this.state.user);
+
+    // console.log(name);
 
     // put validation of the input elements here and the send off to the backend
 
@@ -63,40 +94,40 @@ export default class Registration extends Component {
               <input
                 type="text"
                 name="name"
-                required="required"
                 placeholder="Name"
                 onChange={this.onFieldChange}
               />
+              <span className="error">{this.state.errors["name"]}</span>
               <div className="bar" />
             </div>
             <div className="login__container">
               <input
                 type="text"
                 name="username"
-                required="required"
                 placeholder="Username"
                 onChange={this.onFieldChange}
               />
+              <span className="error">{this.state.errors["username"]}</span>
               <div className="bar" />
             </div>
             <div className="login__container">
               <input
-                type="email"
+                type="text"
                 name="email"
-                required="required"
                 placeholder="email"
                 onChange={this.onFieldChange}
               />
+              <span className="error">{this.state.errors["email"]}</span>
               <div className="bar" />
             </div>
             <div className="login__container">
               <input
                 type="password"
                 name="password"
-                required="required"
                 placeholder="Password"
                 onChange={this.onFieldChange}
               />
+              <span className="error">{this.state.errors["password"]}</span>
               <div className="bar" />
             </div>
             <div className="login__container button">

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import {
   FaFacebook,
   FaGithub,
@@ -8,8 +8,8 @@ import {
   FaTwitterSquare,
   FaChevronRight
 } from "react-icons/fa";
-import { Link } from 'react-router-dom';
-import Axios from 'axios';
+import { Link } from "react-router-dom";
+import Axios from "axios";
 
 export default class Registration extends Component {
   state = {
@@ -20,23 +20,23 @@ export default class Registration extends Component {
       email,
       password
     }
-  }
+  };
 
-  onFieldChange = (e) => {
-    let { user } = this.state
+  onFieldChange = e => {
+    let { user } = this.state;
 
-    const fieldName = e.target.name
-    const fieldValue = e.target.value
+    const fieldName = e.target.name;
+    const fieldValue = e.target.value;
 
-    user[fieldName] = fieldValue
+    user[fieldName] = fieldValue;
 
-    this.setState(() => ({ user }))
-  }
+    this.setState(() => ({ user }));
+  };
 
-  handleRegister = (e) => {
-    e.preventDefault()
+  handleRegister = e => {
+    e.preventDefault();
 
-    console.log(name)
+    console.log(name);
 
     // put validation of the input elements here and the send off to the backend
 
@@ -52,7 +52,7 @@ export default class Registration extends Component {
     // }).then(res => {
     //   console.log(res)
     // })
-  }
+  };
   render() {
     return (
       <div className="body">
@@ -65,6 +65,7 @@ export default class Registration extends Component {
                 name="name"
                 required="required"
                 placeholder="Name"
+                onChange={this.onFieldChange}
               />
               <div className="bar" />
             </div>
@@ -74,6 +75,7 @@ export default class Registration extends Component {
                 name="username"
                 required="required"
                 placeholder="Username"
+                onChange={this.onFieldChange}
               />
               <div className="bar" />
             </div>
@@ -83,6 +85,7 @@ export default class Registration extends Component {
                 name="email"
                 required="required"
                 placeholder="email"
+                onChange={this.onFieldChange}
               />
               <div className="bar" />
             </div>
@@ -92,6 +95,7 @@ export default class Registration extends Component {
                 name="password"
                 required="required"
                 placeholder="Password"
+                onChange={this.onFieldChange}
               />
               <div className="bar" />
             </div>
@@ -100,27 +104,29 @@ export default class Registration extends Component {
                 Register me <FaChevronRight className="arrow-right" />
               </button>
             </div>
-            </form>
-            <footer className="login__container-footer">
-              <div className="socials">
-                <p>or register with</p>
-                <div className="iconholder">
-                  <FaFacebook className="social-icons" />
-                  <FaGithub className="social-icons" />
-                  <FaGoogle className="social-icons" />
-                  <FaInstagram className="social-icons" />
-                  <FaLinkedin className="social-icons" />
-                  <FaTwitterSquare className="social-icons" />
-                </div>
+          </form>
+          <footer className="login__container-footer">
+            <div className="socials">
+              <p>or register with</p>
+              <div className="iconholder">
+                <FaFacebook className="social-icons" />
+                <FaGithub className="social-icons" />
+                <FaGoogle className="social-icons" />
+                <FaInstagram className="social-icons" />
+                <FaLinkedin className="social-icons" />
+                <FaTwitterSquare className="social-icons" />
               </div>
-              <div className="extras">
-                <p>Already registerd?</p>
-                <Link to="/login" className="btn register">Login</Link>
-              </div>
-            </footer>
+            </div>
+            <div className="extras">
+              <p>Already registerd?</p>
+              <Link to="/login" className="btn register">
+                Login
+              </Link>
+            </div>
+          </footer>
           <h4 className="quest">Quest&copy;</h4>
         </div>
       </div>
-    )
+    );
   }
 }

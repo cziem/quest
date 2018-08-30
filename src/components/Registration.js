@@ -12,6 +12,27 @@ import { Link } from 'react-router-dom';
 import Axios from 'axios';
 
 export default class Registration extends Component {
+  state = {
+    isValid: false,
+    user: {
+      name,
+      username,
+      email,
+      password
+    }
+  }
+
+  onFieldChange = (e) => {
+    let { user } = this.state
+
+    const fieldName = e.target.name
+    const fieldValue = e.target.value
+
+    user[fieldName] = fieldValue
+
+    this.setState(() => ({ user }))
+  }
+
   handleRegister = (e) => {
     e.preventDefault()
 

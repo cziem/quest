@@ -83,20 +83,19 @@ export default class Registration extends Component {
     }
 
     this.setState(() => ({ errors }));
-    // this.resetFields();
     return isValid;
   };
 
-  resetFields = () => {
-    this.setState(() => ({
-      errors: {
-        name: "",
-        username: "",
-        email: "",
-        password: ""
-      }
-    }));
-  };
+  // resetFields = () => {
+  //   this.setState(() => ({
+  //     errors: {
+  //       name: "",
+  //       username: "",
+  //       email: "",
+  //       password: ""
+  //     }
+  //   }));
+  // };
 
   handleRegister = e => {
     e.preventDefault();

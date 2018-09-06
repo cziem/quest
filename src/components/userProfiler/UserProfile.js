@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { FaPencilAlt } from "react-icons/fa";
 
 const UserProfile = props => (
@@ -11,13 +11,14 @@ const UserProfile = props => (
       {props.profileImage ? (
         <img
           src=""
-          alt="{props.username}'s profile image"
           className='userImage'
+          alt="Profile description"
           />
         ) : (
         <img
           className='userImage'
-          src={require("../../images/user-icon.png")} alt="Default User Image"
+          src={require("../../images/user-icon.png")}
+          alt="default picutre provided by the app"
         />
       ) }
     </div>

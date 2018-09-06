@@ -66,7 +66,7 @@ export default class Login extends Component {
               </div>
               <div className="extras">
                 <p>
-                  <a href="#">Forgot your password?</a>
+                  <a>Forgot your password?</a>
                 </p>
                 <Link to="/registration" className="btn register">Register</Link>
               </div>

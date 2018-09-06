@@ -46,20 +46,13 @@ export default class Registration extends Component {
 
     if (name === "") {
       isValid = false;
-      errors.name = "Name is required";
-    } else if (!name.match(/^([a-zA-Z])+(\s)+[a-zA-Z]+$/g)) {
+      errors.name = errMsg;
+    } else if (!name.match(/[a-zA-Z_ ]+$/g)) {
       isValid = false;
       errors.name = "Your name cannot contain numbers";
     }
 
-    // if (typeof name !== "undefined") {
-    //   if (!name.match(/^[a-zA-Z]+$/g)) {
-    //     isValid = false;
-    //     errors.name = "Your name cannot contain numbers";
-    //   }
-    // }
-
-    // // Validating the username
+    // Validating the username
     // if (!username) {
     //   isValid = false;
     //   errors.username = errMsg;

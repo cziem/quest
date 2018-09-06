@@ -78,10 +78,12 @@ export default class Registration extends Component {
       errors.password = errMsg;
     } else if (!password.match(passwordRegex)) {
       isValid = false;
-      errors.password = 'must include atleat 1 (Upper & lowercase, number and special charater) not less 8 characters'
+      errors.password =
+        "must include atleat 1 (Upper & lowercase, number and special charater) not less 8 characters";
     }
 
     this.setState(() => ({ errors }));
+    this.resetFields();
     return isValid;
   };
 
@@ -93,8 +95,8 @@ export default class Registration extends Component {
         email: "",
         password: ""
       }
-    }))
-  }
+    }));
+  };
 
   handleRegister = e => {
     e.preventDefault();
@@ -107,8 +109,6 @@ export default class Registration extends Component {
       console.log("Some errors occured");
       console.log(this.state.errors);
     }
-
-    this.resetFields()
 
     // Axios({
     //   method: 'post',

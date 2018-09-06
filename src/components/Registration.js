@@ -36,6 +36,8 @@ export default class Registration extends Component {
     user[fieldName] = fieldValue;
 
     this.setState(() => ({ user }));
+
+    console.log(user)
   };
 
   handleValidation = () => {

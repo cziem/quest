@@ -47,7 +47,7 @@ export default class Registration extends Component {
     if (name === "") {
       isValid = false;
       errors.name = "Name is required";
-    } else if (!name.match(/\w+( +\w+)*$/g)) {
+    } else if (!name.match(/^([a-zA-Z])+(\s)+[a-zA-Z]+$/g)) {
       isValid = false;
       errors.name = "Your name cannot contain numbers";
     }

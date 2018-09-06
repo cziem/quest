@@ -43,6 +43,8 @@ export default class Registration extends Component {
     let { errors } = this.state;
     let { name, username, email, password } = this.state.user;
     const errMsg = "You cannot leave this empty";
+    const emailRegex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+    const passwordRegex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
 
     if (name === "") {
       isValid = false;
@@ -61,44 +63,23 @@ export default class Registration extends Component {
       errors.username = "Should not be less than 4 or more than 10 characters";
     }
 
-
-
     // // Validating the email
-    // if (!email) {
-    //   isValid = false;
-    //   errors.email = errMsg;
-    // }
-
-    // if (typeof email !== "undefined") {
-    //   let lastAtPos = email.lastIndexOf("@");
-    //   let lastDotPos = email.lastIndexOf(".");
-
-    //   if (
-    //     !(
-    //       lastAtPos < lastDotPos &&
-    //       lastAtPos > 0 &&
-    //       email.indexOf("@@") === -1 &&
-    //       lastDotPos > 2 &&
-    //       email.length - lastDotPos > 2
-    //     )
-    //   ) {
-    //     isValid = false;
-    //     errors.email = "Email is not valid";
-    //   }
-    // }
+    if (!email) {
+      isValid = false;
+      errors.email = errMsg;
+    } else if (!email.match(emailRegex)) {
+      isValid = false;
+      errors.email = "Invalid email format";
+    }
 
     // // Validating password
-    // if (!password) {
-    //   isValid = false;
-    //   errors.password = errMsg;
-    // }
-
-    // if (typeof password !== "undefined") {
-    //   if (!password.match(/[a-zA-Z0-9]{6,14}/g)) {
-    //     isValid = false;
-    //     errors.password = 'Password should be atleast 6 character long, not over 14 characters and must not include special characters.'
-    //   }
-    // }
+    if (!password) {
+      isValid = false;
+      errors.password = errMsg;
+    } else if (!password.match(passwordRegex)) {
+      isValid = false;
+      errors.password = 'must include atleat 1 (Upper & lowercase, number and special charater) not less 8 characters'
+    }
 
     this.setState(() => ({ errors }));
     return isValid;

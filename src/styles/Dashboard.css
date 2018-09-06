@@ -22,7 +22,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-height: 10rem;
+  max-height: 13rem;
+  overflow: hidden;
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .img__wrap
@@ -32,7 +35,11 @@
 }
 
 .userImage
-{ width: 100% }
+{
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
 
 .defaultImage
 {
@@ -43,6 +50,33 @@
 
 .editIcon
 {
+  color: white;
+  cursor: pointer;
   text-align: center;
-  color: #111;
+  position: absolute;
+  top: .5rem;
+  right: 1rem;
+  transition: all .3s;
+  transform: translateX(100%) translateX(1rem);
+}
+
+.profilerBox footer.info
+{
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  color: white;
+  text-align: center;
+  transition: all .3s;
+  background: rgba(0, 0, 0, 0.3);
+  transform: translateY(100%) translateY(-1px);
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+}
+
+.profilerBox:hover .info,
+.profilerBox:hover .editIcon
+{
+  transform: translateY(0)
 }

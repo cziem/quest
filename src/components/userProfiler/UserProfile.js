@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { FaPencilAlt, FaUser } from "react-icons/fa";
+import { FaPencilAlt } from "react-icons/fa";
 
 const UserProfile = props => (
   // This component contains the user's profile image, username and location
@@ -13,12 +13,15 @@ const UserProfile = props => (
           src=""
           alt="{props.username}'s profile image"
           className='userImage'
+          />
+        ) : (
+        <img
+          className='userImage'
+          src={require("../../images/user-icon.png")} alt="Default User Image"
         />
-      ) : (
-        <FaUser className='defaultImage' />
-      )}
+      ) }
     </div>
-    <footer>
+    <footer className="info">
       {props.username ? <p>{props.username}</p> : <p>quester</p>}
     </footer>
   </div>

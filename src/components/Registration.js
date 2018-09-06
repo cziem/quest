@@ -85,9 +85,21 @@ export default class Registration extends Component {
     return isValid;
   };
 
+  resetFields = () => {
+    this.setState(() => ({
+      errors: {
+        name: "",
+        username: "",
+        email: "",
+        password: ""
+      }
+    }))
+  }
+
   handleRegister = e => {
     e.preventDefault();
 
+    // Send data off to database
     if (this.handleValidation()) {
       console.log("Successfully Registered.");
       console.log(this.state.user);
@@ -95,6 +107,8 @@ export default class Registration extends Component {
       console.log("Some errors occured");
       console.log(this.state.errors);
     }
+
+    this.resetFields()
 
     // Axios({
     //   method: 'post',

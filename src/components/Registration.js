@@ -9,7 +9,7 @@ import {
   FaChevronRight
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import Axios from "axios";
+// import Axios from "axios";
 
 export default class Registration extends Component {
   state = {
@@ -40,19 +40,71 @@ export default class Registration extends Component {
 
   handleValidation = () => {
     let isValid = true;
-    let {errors} = this.state;
+    let { errors } = this.state;
     let { name, username, email, password } = this.state.user;
+    const errMsg = "You cannot leave this empty";
 
-    // if (name === '') {
-    //   isValid = false;
-    //   errors.name = "You cannot leave this empty";
-    //   console.log(name)
-    // }
+    if (name === '') {
+      isValid = false;
+      errors.name = "You cannot leave this empty";
+      console.log(name)
+    }
 
     if (typeof name !== "undefined") {
       if (!name.match(/^[a-zA-Z]+$/g)) {
         isValid = false;
         errors.name = "Your name cannot contain numbers";
+      }
+    }
+
+    // Validating the username
+    if (!username) {
+      isValid = false;
+      errors.username = errMsg;
+    }
+
+    if (typeof username !== "undefined") {
+      if (!username.match(/[a-zA-Z0-9]{4, 10}/g)) {
+        isValid = false;
+        errors.username =
+          "Should not be less than 4 or more than 10 characters";
+      }
+    }
+
+    // Validating the email
+    if (!email) {
+      isValid = false;
+      errors.email = errMsg;
+    }
+
+    if (typeof email !== "undefined") {
+      let lastAtPos = email.lastIndexOf("@");
+      let lastDotPos = email.lastIndexOf(".");
+
+      if (
+        !(
+          lastAtPos < lastDotPos &&
+          lastAtPos > 0 &&
+          email.indexOf("@@") === -1 &&
+          lastDotPos > 2 &&
+          email.length - lastDotPos > 2
+        )
+      ) {
+        isValid = false;
+        errors.email = "Email is not valid";
+      }
+    }
+
+    // Validating password
+    if (!password) {
+      isValid = false;
+      errors.password = errMsg;
+    }
+
+    if (typeof password !== "undefined") {
+      if (!password.match(/[a-zA-Z0-9]{6,14}/g)) {
+        isValid = false;
+        errors.password = 'Password should be atleast 6 character long, not over 14 characters and must not include special characters.'
       }
     }
 
@@ -63,13 +115,13 @@ export default class Registration extends Component {
   handleRegister = e => {
     e.preventDefault();
 
-    this.handleValidation();
-
-    console.log(this.state.user);
-
-    // console.log(name);
-
-    // put validation of the input elements here and the send off to the backend
+    if (this.handleValidation()) {
+      console.log('Successfully Registered.')
+      console.log(this.state.user);
+    } else {
+      console.log('Some errors occured')
+      console.log(this.state.errors)
+    }
 
     // Axios({
     //   method: 'post',

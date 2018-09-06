@@ -42,7 +42,7 @@ export default class Login extends Component {
               />
               <div className="bar" />
             </div>
-            <label for="checkbox" className="remember">
+            <label htmlFor="checkbox" className="remember">
               <input type="checkbox" />
               <span>Remember me</span>
             </label>

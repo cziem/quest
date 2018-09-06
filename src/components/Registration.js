@@ -53,18 +53,15 @@ export default class Registration extends Component {
     }
 
     // Validating the username
-    // if (!username) {
-    //   isValid = false;
-    //   errors.username = errMsg;
-    // }
+    if (!username) {
+      isValid = false;
+      errors.username = errMsg;
+    } else if (!username.match(/[a-zA-Z0-9]{4,10}/g)) {
+      isValid = false;
+      errors.username = "Should not be less than 4 or more than 10 characters";
+    }
 
-    // if (typeof username !== "undefined") {
-    //   if (!username.match(/[a-zA-Z0-9]{4, 10}/g)) {
-    //     isValid = false;
-    //     errors.username =
-    //       "Should not be less than 4 or more than 10 characters";
-    //   }
-    // }
+
 
     // // Validating the email
     // if (!email) {

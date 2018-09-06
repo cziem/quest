@@ -36,8 +36,6 @@ export default class Registration extends Component {
     user[fieldName] = fieldValue;
 
     this.setState(() => ({ user }));
-
-    console.log(user)
   };
 
   handleValidation = () => {
@@ -46,69 +44,71 @@ export default class Registration extends Component {
     let { name, username, email, password } = this.state.user;
     const errMsg = "You cannot leave this empty";
 
-    if (name === '') {
+    if (name === "") {
       isValid = false;
-      errors.name = "You cannot leave this empty";
-      console.log(name)
-    }
-
-    if (typeof name !== "undefined") {
-      if (!name.match(/^[a-zA-Z]+$/g)) {
-        isValid = false;
-        errors.name = "Your name cannot contain numbers";
-      }
-    }
-
-    // Validating the username
-    if (!username) {
+      errors.name = "Name is required";
+    } else if (!name.match(/\w+( +\w+)*$/g)) {
       isValid = false;
-      errors.username = errMsg;
+      errors.name = "Your name cannot contain numbers";
     }
 
-    if (typeof username !== "undefined") {
-      if (!username.match(/[a-zA-Z0-9]{4, 10}/g)) {
-        isValid = false;
-        errors.username =
-          "Should not be less than 4 or more than 10 characters";
-      }
-    }
+    // if (typeof name !== "undefined") {
+    //   if (!name.match(/^[a-zA-Z]+$/g)) {
+    //     isValid = false;
+    //     errors.name = "Your name cannot contain numbers";
+    //   }
+    // }
 
-    // Validating the email
-    if (!email) {
-      isValid = false;
-      errors.email = errMsg;
-    }
+    // // Validating the username
+    // if (!username) {
+    //   isValid = false;
+    //   errors.username = errMsg;
+    // }
 
-    if (typeof email !== "undefined") {
-      let lastAtPos = email.lastIndexOf("@");
-      let lastDotPos = email.lastIndexOf(".");
+    // if (typeof username !== "undefined") {
+    //   if (!username.match(/[a-zA-Z0-9]{4, 10}/g)) {
+    //     isValid = false;
+    //     errors.username =
+    //       "Should not be less than 4 or more than 10 characters";
+    //   }
+    // }
 
-      if (
-        !(
-          lastAtPos < lastDotPos &&
-          lastAtPos > 0 &&
-          email.indexOf("@@") === -1 &&
-          lastDotPos > 2 &&
-          email.length - lastDotPos > 2
-        )
-      ) {
-        isValid = false;
-        errors.email = "Email is not valid";
-      }
-    }
+    // // Validating the email
+    // if (!email) {
+    //   isValid = false;
+    //   errors.email = errMsg;
+    // }
 
-    // Validating password
-    if (!password) {
-      isValid = false;
-      errors.password = errMsg;
-    }
+    // if (typeof email !== "undefined") {
+    //   let lastAtPos = email.lastIndexOf("@");
+    //   let lastDotPos = email.lastIndexOf(".");
 
-    if (typeof password !== "undefined") {
-      if (!password.match(/[a-zA-Z0-9]{6,14}/g)) {
-        isValid = false;
-        errors.password = 'Password should be atleast 6 character long, not over 14 characters and must not include special characters.'
-      }
-    }
+    //   if (
+    //     !(
+    //       lastAtPos < lastDotPos &&
+    //       lastAtPos > 0 &&
+    //       email.indexOf("@@") === -1 &&
+    //       lastDotPos > 2 &&
+    //       email.length - lastDotPos > 2
+    //     )
+    //   ) {
+    //     isValid = false;
+    //     errors.email = "Email is not valid";
+    //   }
+    // }
+
+    // // Validating password
+    // if (!password) {
+    //   isValid = false;
+    //   errors.password = errMsg;
+    // }
+
+    // if (typeof password !== "undefined") {
+    //   if (!password.match(/[a-zA-Z0-9]{6,14}/g)) {
+    //     isValid = false;
+    //     errors.password = 'Password should be atleast 6 character long, not over 14 characters and must not include special characters.'
+    //   }
+    // }
 
     this.setState(() => ({ errors }));
     return isValid;
@@ -118,11 +118,11 @@ export default class Registration extends Component {
     e.preventDefault();
 
     if (this.handleValidation()) {
-      console.log('Successfully Registered.')
+      console.log("Successfully Registered.");
       console.log(this.state.user);
     } else {
-      console.log('Some errors occured')
-      console.log(this.state.errors)
+      console.log("Some errors occured");
+      console.log(this.state.errors);
     }
 
     // Axios({

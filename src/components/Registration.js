@@ -83,7 +83,7 @@ export default class Registration extends Component {
     }
 
     this.setState(() => ({ errors }));
-    this.resetFields();
+    // this.resetFields();
     return isValid;
   };
 

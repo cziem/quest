@@ -3,6 +3,8 @@
 {
   height: 100vh;
   width: 100%;
+  display: flex;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell,  'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 /* Activity Pane */
@@ -79,4 +81,26 @@
 .profilerBox:hover .editIcon
 {
   transform: translateY(0)
+}
+
+/* Interactive */
+.app__interact
+{
+  background: #f3f3f3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.welcome_msg
+{
+  text-align: center;
+  color: #1b1933;
+}
+
+.welcome_msg h1
+{
+  font-weight: 500;
 }

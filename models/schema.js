@@ -15,7 +15,9 @@ const InputSchema = new mongoose.Schema({
 
 const Message = mongoose.model("Message", InputSchema);
 
+const userReg = mongoose.model("Registration", AppSchema);
+
 module.exports = {
-  AppSchema,
+  userReg,
   Message
 };

@@ -20,7 +20,7 @@ app.use((req, res, next) => {
 const options = { useNewUrlParser: true };
 mongoose
   .connect(
-    "mongodb://localhost/Validator",
+    "mongodb://localhost/Quest",
     options
   )
   .then(() => console.log("Mongoose connection successful..."))

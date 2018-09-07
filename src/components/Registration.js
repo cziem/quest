@@ -102,18 +102,27 @@ export default class Registration extends Component {
 
     // Send data off to database
     if (this.handleValidation()) {
-      console.log("Successfully Registered.");
       const body = this.state.user;
 
       Axios({
         method: 'post',
-        url: 'http://localhost:3000/registration',
+        url: 'http://localhost:3001/server',
         data: body
       })
         .then(res => console.log(res))
+        .catch(err => console.log('An error occurred...', err));
 
       // Clear the form fields
       this.resetFields(e)
+      // Empty State
+      this.setState(() => ({
+        user: {
+          name: "",
+          username: "",
+          email: "",
+          password: ""
+        }
+      }))
     } else {
       return
     }

@@ -9,7 +9,7 @@ import {
   FaChevronRight
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
-// import Axios from "axios";
+import Axios from "axios";
 
 export default class Registration extends Component {
   state = {
@@ -103,20 +103,14 @@ export default class Registration extends Component {
     // Send data off to database
     if (this.handleValidation()) {
       console.log("Successfully Registered.");
-      console.log(this.state.user);
+      const body = this.state.user;
 
       Axios({
         method: 'post',
         url: 'http://localhost:3000/registration',
-        data: {
-          name,
-          username,
-          email,
-          password
-        },
-      }).then(res => {
-        console.log(res)
-        })
+        data: body
+      })
+        .then(res => console.log(res))
 
       // Clear the form fields
       this.resetFields(e)

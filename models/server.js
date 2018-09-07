@@ -52,4 +52,10 @@ app.post("/server", (req, res) => {
   }
 });
 
+app.get('/server', async (req, res) => {
+  const user = await schemas.userReg.find()
+  res.json(user)
+  console.log(user)
+})
+
 app.listen(port, () => console.log(`Server is running on port ${port}`));

@@ -41,6 +41,13 @@ export default class Registration extends Component {
   handleValidation = () => {
     let isValid = true;
     let { errors } = this.state;
+
+    // the error state needs to be empty for each call to this method.
+    errors.name = ''
+    errors.username = ''
+    errors.email = ''
+    errors.password = ''
+
     let { name, username, email, password } = this.state.user;
     const errMsg = "You cannot leave this empty";
     const emailRegex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;

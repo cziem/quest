@@ -108,8 +108,7 @@ export default class Registration extends Component {
       // Clear the form fields
       this.resetFields(e)
     } else {
-      console.log("Some errors occured");
-      console.log(this.state.errors);
+      return
     }
 
     // Axios({

@@ -111,7 +111,8 @@ export default class Registration extends Component {
       })
         .then(res => {
           // Send user to athu page. But first send to dashboard for development purposes
-          window.location.href = "http://localhost:3000/dashboard";
+          // window.location.href = `http://localhost:3000/dashboard:${res._id}`;
+          window.location.href = `http://localhost:3000/dashboard`;
           console.log(res)
         })
         .catch(err => console.log('An error occurred...', err));

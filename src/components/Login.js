@@ -18,14 +18,23 @@ export default class Login extends Component {
 
   handleLogin = e => {
     e.preventDefault();
+    this.resetField(e)
   };
+
+  resetField = e => {
+    e.target.reset()
+  }
 
   render() {
     return (
       <div className="body">
         <div className="container__main">
           <h2 className="title">Login</h2>
-          <form onSubmit={this.handleLogin} className="login">
+          <form
+            onSubmit={this.handleLogin}
+            className="login"
+            id="login"
+          >
             <div className="login__container">
               <input
                 type="text"

@@ -93,16 +93,9 @@ export default class Registration extends Component {
     return isValid;
   };
 
-  // resetFields = () => {
-  //   this.setState(() => ({
-  //     errors: {
-  //       name: "",
-  //       username: "",
-  //       email: "",
-  //       password: ""
-  //     }
-  //   }));
-  // };
+  resetFields = (e) => {
+    e.target.reset()
+  };
 
   handleRegister = e => {
     e.preventDefault();
@@ -111,6 +104,9 @@ export default class Registration extends Component {
     if (this.handleValidation()) {
       console.log("Successfully Registered.");
       console.log(this.state.user);
+
+      // Clear the form fields
+      this.resetFields(e)
     } else {
       console.log("Some errors occured");
       console.log(this.state.errors);
@@ -134,7 +130,7 @@ export default class Registration extends Component {
       <div className="body">
         <div className="container__main">
           <h2 className="title">Registration</h2>
-          <form onSubmit={this.handleRegister}>
+          <form onSubmit={this.handleRegister} id="regForm">
             <div className="login__container">
               <input
                 type="text"

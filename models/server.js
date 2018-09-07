@@ -30,19 +30,25 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post("/server", (req, res) => {
-  let message = req.body.message;
-  console.log(message);
+  let data = req.body
+  console.log(`The request message is ${JSON.stringify(data)}`);
 
-  if (!message) {
+  if (!data) {
     res.json({ message: "empty" });
   } else {
-    new schemas.Message({
-      message
+    new schemas.userReg({
+      name: data.name,
+      username: data.username,
+      email: data.email,
+      password: data.password
     })
       .save()
-      .then(resp => res.json({
-        message: 'Saved Successfully'
-      }));
+      .then(resp => {
+        if (resp) {
+          console.log(resp)
+          res.json({ message: 'Saved Successfully' })
+        }
+      });
   }
 });
 

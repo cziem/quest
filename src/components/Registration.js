@@ -109,7 +109,11 @@ export default class Registration extends Component {
         url: 'http://localhost:3001/server',
         data: body
       })
-        .then(res => console.log(res))
+        .then(res => {
+          // Send user to athu page. But first send to dashboard for development purposes
+          window.location.href = "http://localhost:3000/dashboard";
+          console.log(res)
+        })
         .catch(err => console.log('An error occurred...', err));
 
       // Clear the form fields

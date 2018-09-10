@@ -18,7 +18,7 @@ export default class ActivityPane extends Component {
       method: 'GET',
       url: 'http://localhost:3001/server'
     })
-      .then(res => console.dir(res.data))
+      .then(res => console.dir(res))
       .catch(err => console.log('could not GET the data', err))
   }
 

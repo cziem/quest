@@ -53,6 +53,7 @@ app.post("/server", (req, res) => {
 });
 
 app.get('/server', async (req, res) => {
+  // const user = await schemas.userReg.findById({ _id: id })
   const user = await schemas.userReg.find()
   res.json(user)
   console.log(user)

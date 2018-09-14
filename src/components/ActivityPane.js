@@ -23,12 +23,15 @@ export default class ActivityPane extends Component {
       .catch(err => console.log('could not GET the data', err))
   }
 
-  render () {
+  render() {
     return (
       <div className='paneWrapper'>
         {/* user profile */}
         <UserProfile />
-        <ListItems />
+        <ListItems
+          realState={this.props.realState}
+          toggle={this.props.toggleState}
+        />
       </div>
     )
   }

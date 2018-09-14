@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import UserProfile from './userProfiler/UserProfile';
+import ListItems from './sideBarLists/ListItems';
 import Axios from 'axios';
 
 export default class ActivityPane extends Component {
@@ -27,6 +28,7 @@ export default class ActivityPane extends Component {
       <div className='paneWrapper'>
         {/* user profile */}
         <UserProfile />
+        <ListItems />
       </div>
     )
   }

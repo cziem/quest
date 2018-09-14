@@ -104,3 +104,36 @@
 {
   font-weight: 500;
 }
+
+/* ListItems */
+.list_box
+{
+  display: flex;
+  height: 55%;
+}
+
+.list_box ul
+{
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.list_box ul li
+{
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+  padding-left: 1rem;
+  transition: all .3s;
+}
+
+.list_box ul li:hover
+{
+  background: #0b0b1b;
+}

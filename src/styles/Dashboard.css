@@ -137,3 +137,32 @@
 {
   background: #0b0b1b;
 }
+
+/* account_activities */
+.account_activities
+{
+  border-top: 1px solid #0a0912;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 4rem;
+  z-index: 10;
+  margin-top: 1.6rem;
+}
+
+.btn-account
+{
+  flex: 1 1 auto;
+  max-width: 40%;
+  cursor: pointer;
+  transition: all .3s;
+  border: none;
+  padding: .5rem 0;
+}
+
+.btn-account:hover
+{
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+}

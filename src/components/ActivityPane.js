@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import UserProfile from './userProfiler/UserProfile';
 import ListItems from './sideBarLists/ListItems';
 import Axios from 'axios';
+import Button from './Button';
 
 export default class ActivityPane extends Component {
   state = {
@@ -32,6 +33,10 @@ export default class ActivityPane extends Component {
           realState={this.props.realState}
           toggle={this.props.toggleState}
         />
+        <div className='account_activities'>
+          <Button cName="btn-account" name="Account"/>
+          <Button cName="btn-account" name="Logout" />
+        </div>
       </div>
     )
   }

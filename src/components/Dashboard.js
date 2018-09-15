@@ -26,7 +26,7 @@ export default class Dashboard extends Component {
     return (
       <div className='dashboard'>
         {/* Activity Panel */}
-        <ActivityPane realState={this.state} toggleState={this.toggleState} />
+        <ActivityPane realState={this.state} toggleStaate={this.toggleState} />
         <Interactive />
       </div>
     );

@@ -2,10 +2,13 @@
 const mongoose = require("mongoose");
 
 const AppSchema = new mongoose.Schema({
-  name: String,
-  username: String,
-  email: String,
-  password: String
+  name: { type: String, required: true },
+  username: { type: String, required: true, unique: true },
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
+  date: { type: Date, default: Date.now }
+
+  // more to come later
 });
 
 const InputSchema = new mongoose.Schema({

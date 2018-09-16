@@ -106,7 +106,7 @@ export default class Registration extends Component {
 
       Axios({
         method: 'post',
-        url: 'http://localhost:3001/server',
+        url: 'http://localhost:3001/registration',
         data: body
       })
         .then(res => {

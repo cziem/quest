@@ -6,6 +6,7 @@ const mongoose = require("mongoose"),
 const port = process.env.PORT || 3001;
 const app = express();
 
+// CORS middleware
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Method", "GET, POST, PUT, DELETE");
@@ -17,6 +18,7 @@ app.use((req, res, next) => {
   next();
 });
 
+// Connect mongoose to DB
 const options = { useNewUrlParser: true };
 mongoose
   .connect(
@@ -29,7 +31,7 @@ mongoose
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.post("/server", (req, res) => {
+app.post("/registration", (req, res) => {
   let data = req.body
   console.log(`The request message is ${JSON.stringify(data)}`);
 
@@ -52,7 +54,7 @@ app.post("/server", (req, res) => {
   }
 });
 
-app.get('/server', async (req, res) => {
+app.get('/registration', async (req, res) => {
   // const user = await schemas.userReg.findById({ _id: id })
   const user = await schemas.userReg.find()
   res.json(user)

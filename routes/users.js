@@ -1,7 +1,8 @@
-const mongoose = require('mongoose')
-const express = require('express')
-const bcrypt = require('bcrypt')
-const _ = require('lodash')
+const mongoose = require('mongoose'),
+     express = require('express'),
+     bcrypt = require('bcrypt'),
+     _ = require('lodash');
+
 const { User } = require('../models/user')
 
 const app = express();
@@ -20,11 +21,9 @@ router.post('/', async (req, res) => {
 
   await user.save()
 
-  _.pick(user, [
-    'name', 'email'
-  ])
-
-  res.send(_.pick(user, [
+  const token = user.generateAuthToken();
+  res.header('x-auth-token', token)
+    .send(_.pick(user, [
     'name', 'email', '_id'
   ]))
   console.log(users)

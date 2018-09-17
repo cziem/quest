@@ -31,7 +31,7 @@ mongoose
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.post("/registration", (req, res) => {
+app.post("/registration/user", (req, res) => {
   let data = req.body
   console.log(`The request message is ${JSON.stringify(data)}`);
 
@@ -54,7 +54,7 @@ app.post("/registration", (req, res) => {
   }
 });
 
-app.get('/registration', async (req, res) => {
+app.get('/user', async (req, res) => {
   // const user = await schemas.userReg.findById({ _id: id })
   const user = await schemas.userReg.find()
   res.json(user)

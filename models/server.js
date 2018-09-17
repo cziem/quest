@@ -1,7 +1,9 @@
 const mongoose = require("mongoose"),
-  schemas = require("./schema"),
-  express = require("express"),
-  bodyParser = require("body-parser");
+     schemas = require("./schema"),
+     express = require("express"),
+     bodyParser = require("body-parser"),
+     users = require('../routes/users'),
+     auth = require('../routes/auth');
 
 const port = process.env.PORT || 3001;
 const app = express();
@@ -60,5 +62,8 @@ app.get('/user', async (req, res) => {
   res.json(user)
   console.log(user)
 })
+
+app.use('/dashboard/users', users)
+app.use('/dashboard/auth', auth)
 
 app.listen(port, () => console.log(`Server is running on port ${port}`));

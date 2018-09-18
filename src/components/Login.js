@@ -23,7 +23,7 @@ export default class Login extends Component {
       username: '',
       password: ''
     },
-    error: {
+    errors: {
       username: '',
       password: ''
     }
@@ -113,7 +113,11 @@ export default class Login extends Component {
                 type="text"
                 name="username"
                 placeholder="Username"
+                onChange={this.onFieldChange}
               />
+              <span className="error">
+                {this.state.errors["name"]}
+              </span>
               <div className="bar" />
             </div>
             <div className="login__container">
@@ -121,7 +125,11 @@ export default class Login extends Component {
                 type="password"
                 name="password"
                 placeholder="Password"
+                onChange={this.onFieldChange}
               />
+              <span className="error">
+                {this.state.errors["name"]}
+              </span>
               <div className="bar" />
             </div>
             <label htmlFor="checkbox" className="remember">

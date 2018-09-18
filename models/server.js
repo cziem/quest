@@ -49,7 +49,7 @@ app.post("/registration/user", (req, res) => {
     })
       .save()
       .then(resp => {
-        if (resp) {
+         if (resp) {
           console.log(resp)
           res.json({ message: 'Saved Successfully' })
         }
@@ -59,9 +59,9 @@ app.post("/registration/user", (req, res) => {
 
 app.get('/user', async (req, res) => {
   // const user = await schemas.userReg.findById({ _id: id })
-  const user = await schemas.userReg.find()
+  const user = await schemas.userReg.find().select('name')
   res.json(user)
-  console.log(user)
+  // console.log(user)
 })
 
 // app.use('/dashboard/users', users)

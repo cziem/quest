@@ -44,6 +44,8 @@ export default class Login extends Component {
         .then(res => {
           if (res.request.status === 200) {
             const id = res.data[0]._id
+
+            // This should not be the standard
             window.location.href = `http://localhost:3001/dashboard/${id}`
             // history.push(`/dashboard/${id}`)
           }

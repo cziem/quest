@@ -38,7 +38,7 @@ export default class Login extends Component {
       Axios({
         // Let's try GET for now in DEV mode
         method: 'GET',
-        url: 'http://localhost:3001/users',
+        url: 'http://localhost:3300/users',
         data: body
       })
         .then(res => {

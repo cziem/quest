@@ -6,7 +6,7 @@ const mongoose = require("mongoose"),
     //  users = require('../routes/users'),
      auth = require('../routes/auth');
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3300;
 const app = express();
 
 // CORS middleware

@@ -1,3 +1,8 @@
+/* 
+* MVP-0 :: validate login for just 'username' and 'password' 
+* Extract the server returned ID
+*/
+
 import React, { Component } from "react";
 import {
   FaFacebook,
@@ -10,15 +15,83 @@ import {
 } from "react-icons/fa";
 import "../styles/Login.css";
 import { Link } from 'react-router-dom';
+import Axios from "axios";
 
 export default class Login extends Component {
   state = {
-    error: undefined
+    user: {
+      username: '',
+      password: ''
+    },
+    error: {
+      username: '',
+      password: ''
+    }
   };
 
   handleLogin = e => {
     e.preventDefault();
-    this.resetField(e)
+
+    if (this.handleValidation()) {
+      const body = this.state.user;
+
+      Axios({
+        // Let's try GET for now in DEV mode
+        method: 'GET',
+        url: 'http://localhost:3001/users',
+        data: body
+      })
+        .then(res => {
+          console.log(res)
+        })
+        .catch(err => console.log('An error occurred.', err));
+      
+      this.resetField(e)
+      this.setState(() => ({
+        user: {
+          username: '',
+          password: ''
+        }
+      }))
+    }
+  };
+
+  onFieldChange = e => {
+    let { user } = this.state;
+
+    const fieldName = e.target.name;
+    const fieldValue = e.target.value;
+
+    user[fieldName] = fieldValue;
+
+    this.setState(() => ({ user }));
+  };
+
+  handleValidation = () => {
+    let isValid = true;
+    let { errors } = this.state;
+
+    // just check if fields are empty. Backend validation will check for MATCH
+    errors.username = ''
+    errors.password = ''
+
+    let { username, password } = this.state.user;
+    const errMsg = "You cannot leave this empty";
+
+    // Validating the username
+    if (!username) {
+      isValid = false;
+      errors.username = errMsg;
+    }
+
+    // Validating password
+    if (!password) {
+      isValid = false;
+      errors.password = errMsg;
+    }
+
+    this.setState(() => ({ errors }));
+    return isValid;
   };
 
   resetField = e => {

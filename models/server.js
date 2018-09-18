@@ -2,7 +2,7 @@ const mongoose = require("mongoose"),
      express = require("express"),
      bodyParser = require("body-parser"),
      schemas = require("./schema"),
-     user = require("./user"),
+     UserSchema = require("./user"),
     //  users = require('../routes/users'),
      auth = require('../routes/auth');
 
@@ -41,7 +41,7 @@ app.post("/registration/user", (req, res) => {
   if (!data) {
     res.json({ message: "empty" });
   } else {
-    new user({
+    new UserSchema.User({
       name: data.name,
       username: data.username,
       email: data.email,
@@ -56,6 +56,18 @@ app.post("/registration/user", (req, res) => {
       });
   }
 });
+
+app.get('/users', async (req, res) => {
+  const user = await UserSchema
+    .User
+    .find()
+    .select([
+      'name',
+      'email',
+      'username'
+    ])
+  res.json(user)
+})
 
 app.get('/user', async (req, res) => {
   // const user = await schemas.userReg.findById({ _id: id })

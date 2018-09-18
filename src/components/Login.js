@@ -116,7 +116,7 @@ export default class Login extends Component {
                 onChange={this.onFieldChange}
               />
               <span className="error">
-                {this.state.errors["name"]}
+                {this.state.errors["username"]}
               </span>
               <div className="bar" />
             </div>
@@ -128,7 +128,7 @@ export default class Login extends Component {
                 onChange={this.onFieldChange}
               />
               <span className="error">
-                {this.state.errors["name"]}
+                {this.state.errors["password"]}
               </span>
               <div className="bar" />
             </div>

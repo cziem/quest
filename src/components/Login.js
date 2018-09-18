@@ -42,7 +42,11 @@ export default class Login extends Component {
         data: body
       })
         .then(res => {
-          console.log(res)
+          if (res.request.status === 200) {
+            const id = res.data[0]._id
+            window.location.href = `http://localhost:3001/dashboard/${id}`
+            // history.push(`/dashboard/${id}`)
+          }
         })
         .catch(err => console.log('An error occurred.', err));
       
@@ -114,6 +118,7 @@ export default class Login extends Component {
                 name="username"
                 placeholder="Username"
                 onChange={this.onFieldChange}
+                autoFocus={true}
               />
               <span className="error">
                 {this.state.errors["username"]}

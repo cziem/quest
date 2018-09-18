@@ -4,7 +4,7 @@ const mongoose = require('mongoose'),
      Joi = require('joi'),
      _ = require('lodash');
 
-const { User, validate } = require('../models/user')
+const { User } = require('../models/user')
 
 const app = express();
 const router = express.Router()

@@ -1,8 +1,9 @@
 const mongoose = require("mongoose"),
-     schemas = require("./schema"),
      express = require("express"),
      bodyParser = require("body-parser"),
-     users = require('../routes/users'),
+     schemas = require("./schema"),
+     user = require("./user"),
+    //  users = require('../routes/users'),
      auth = require('../routes/auth');
 
 const port = process.env.PORT || 3001;
@@ -40,7 +41,7 @@ app.post("/registration/user", (req, res) => {
   if (!data) {
     res.json({ message: "empty" });
   } else {
-    new schemas.userReg({
+    new user({
       name: data.name,
       username: data.username,
       email: data.email,
@@ -63,7 +64,7 @@ app.get('/user', async (req, res) => {
   console.log(user)
 })
 
-app.use('/dashboard/users', users)
-app.use('/dashboard/auth', auth)
+// app.use('/dashboard/users', users)
+// app.use('/dashboard/auth', auth)
 
 app.listen(port, () => console.log(`Server is running on port ${port}`));

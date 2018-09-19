@@ -7,7 +7,11 @@ const Home = () => (
   <div className="main__wrap" >
     <header className="header__home">
       <h2>quest</h2>
-      <button>get started</button>
+      <Link to="/registration">
+        <button>
+          get started
+        </button>
+      </Link>
     </header>
 
     <main>

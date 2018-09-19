@@ -30,7 +30,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "serve": "node ./backend/models/server.js"
+    "serve": "node ./backend/routes/server.js"
   },
   "repository": {
     "type": "git",

@@ -1,11 +1,11 @@
 const mongoose = require("mongoose"),
      express = require("express"),
      bodyParser = require("body-parser"),
-    //  schemas = require("./schema"),
-    //  UserSchema = require("./user"),
-     registration = require('../routes/registration'),
-     users = require('../routes/users'),
-     auth = require('../routes/auth');
+    //  schemas = require("./models/schema"),
+    //  UserSchema = require("./models/user"),
+     registration = require('./registration'),
+     users = require('./users'),
+     auth = require('./auth');
 
 const port = process.env.PORT || 3001;
 const app = express();

@@ -58,17 +58,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // });
 
 // For Routes
-app.use('/users', users)
-app.use('/registration/user', users)
-
-/* app.get('/user', async (req, res) => {
-  // const user = await schemas.userReg.findById({ _id: id })
-  const user = await schemas.userReg.find().select('name')
-  res.json(user)
-  // console.log(user)
-}) */
-
-// app.use('/dashboard/users', users)
-// app.use('/dashboard/auth', auth)
+app.use('/users', auth)
+app.use('/registration', users)
 
 app.listen(port, () => console.log(`Server is running on port ${port}`));

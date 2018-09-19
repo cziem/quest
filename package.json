@@ -28,10 +28,13 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "serve": "node ./backend/models/server.js"
+    "serve": "nodemon ./backend/models/server.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/phavor/quest"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
   }
 }

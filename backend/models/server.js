@@ -1,12 +1,13 @@
 const mongoose = require("mongoose"),
      express = require("express"),
      bodyParser = require("body-parser"),
-     schemas = require("./schema"),
-     UserSchema = require("./user"),
+    //  schemas = require("./schema"),
+    //  UserSchema = require("./user"),
+     registration = require('../routes/registration'),
      users = require('../routes/users'),
      auth = require('../routes/auth');
 
-const port = process.env.PORT || 3300;
+const port = process.env.PORT || 3001;
 const app = express();
 
 // CORS middleware
@@ -34,31 +35,9 @@ mongoose
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// app.post("/registration/user", (req, res) => {
-//   let data = req.body
-//   console.log(`The request message is ${JSON.stringify(data)}`);
-
-//   if (!data) {
-//     res.json({ message: "empty" });
-//   } else {
-//     new UserSchema.User({
-//       name: data.name,
-//       username: data.username,
-//       email: data.email,
-//       password: data.password
-//     })
-//       .save()
-//       .then(resp => {
-//          if (resp) {
-//           console.log(resp)
-//           res.json({ message: 'Saved Successfully' })
-//         }
-//       });
-//   }
-// });
-
 // For Routes
-app.use('/users', auth)
-app.use('/registration', users)
+app.use('/users', users)
+app.use('/auth', auth)
+app.use('/registration', registration)
 
 app.listen(port, () => console.log(`Server is running on port ${port}`));

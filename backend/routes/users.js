@@ -9,9 +9,6 @@ const app = express();
 const router = express.Router()
 
 router.get('/', async (req, res) => {
-//   const { error } = validateUser(req.body)
-//   if (error) return res.status(400).send(error.details[0].message)
-  
   const user = await User
     .find()
     .select([

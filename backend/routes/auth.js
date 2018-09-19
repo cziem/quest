@@ -5,11 +5,12 @@ const mongoose = require('mongoose'),
      _ = require('lodash');
 
 const { User } = require('../models/user')
+const auth_mid = require('../middleware/middleware_auth')
 
 const app = express();
 const router = express.Router()
 
-router.post('/', async (req, res) => {
+router.post('/', auth_mid, async (req, res) => {
   const { error } = validate(req.body)
   if (error) return res.status(400).send(error.details[0].message)
 

@@ -53,10 +53,6 @@ const validateUser = (user) => {
   return Joi.validate(user, schema)
 }
 
-// exports.User = User;
-// exports.validate = validateUser;
-
-
 module.exports = {
   User,
   validateUser

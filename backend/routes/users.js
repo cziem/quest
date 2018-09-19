@@ -3,13 +3,13 @@ const mongoose = require('mongoose'),
      bcrypt = require('bcrypt'),
      _ = require('lodash');
 
-const { User } = require('../models/user')
+const { User, validateUser } = require('../models/user')
 
 const app = express();
 const router = express.Router()
 
 router.post('/', async (req, res) => {
-  const { error } = validate(req.body)
+  const { error } = validateUser(req.body)
   if (error) return res.status(400).send(error.details[0].message)
 
   let user = await User.findOne({ email: req.body.email })
@@ -27,6 +27,17 @@ router.post('/', async (req, res) => {
     'name', 'email', '_id'
   ]))
   console.log(users)
+})
+
+router.get('/', async (req, res) => {
+  const user = await User
+    .find()
+    .select([
+      'name',
+      'email',
+      'username'
+    ])
+  res.json(user)
 })
 
 module.exports = router;

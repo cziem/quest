@@ -106,14 +106,16 @@ export default class Registration extends Component {
 
       Axios({
         method: 'post',
-        url: 'http://localhost:3300/registration/user',
+        url: 'http://localhost:3300/registration',
         data: body
       })
         .then(res => {
           // Send user to athu page. But first send to dashboard for development purposes
           // window.location.href = `http://localhost:3000/dashboard:${res._id}`;
-          window.location.href = `http://localhost:3000/dashboard`;
-          console.log(res)
+          if (res.request.status === 200) {
+            window.location.href = `http://localhost:3000/dashboard`;
+            console.log(res)
+          }
         })
         .catch(err => console.log('An error occurred...', err));
 

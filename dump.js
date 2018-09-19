@@ -85,3 +85,27 @@ const style = {
     width: "100%"
   }
 };
+
+// For registration MVP-0
+// app.post("/registration/user", (req, res) => {
+//   let data = req.body
+//   console.log(`The request message is ${JSON.stringify(data)}`);
+
+//   if (!data) {
+//     res.json({ message: "empty" });
+//   } else {
+//     new UserSchema.User({
+//       name: data.name,
+//       username: data.username,
+//       email: data.email,
+//       password: data.password
+//     })
+//       .save()
+//       .then(resp => {
+//          if (resp) {
+//           console.log(resp)
+//           res.json({ message: 'Saved Successfully' })
+//         }
+//       });
+//   }
+// });

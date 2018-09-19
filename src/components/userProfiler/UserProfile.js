@@ -8,7 +8,7 @@ const UserProfile = (props) => (
       <FaPencilAlt />
     </div>
     <div className='img__wrap'>
-      { props.details.profileImage ? (
+      { props.details.photo ? (
         <img
           src=""
           className='userImage'

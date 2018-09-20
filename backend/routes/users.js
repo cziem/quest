@@ -15,16 +15,4 @@ router.get('/me', auth_mid, async (req, res) => {
   res.send(user)
  })
 
-/* 
-router.get('/me', auth_mid, async (req, res) => {
-  const user = await User
-    .find()
-    .select([
-      'name',
-      'email',
-      'username'
-    ])
-  res.json(user)
-})
- */
 module.exports = router;

@@ -113,9 +113,10 @@ export default class Registration extends Component {
           // Send user to athu page. But first send to dashboard for development purposes
           if (res.request.status === 200) {
             const token = res.data.token;
+            const username = res.data.details.username
             localStorage.setItem('token', token)
             
-            window.location.href = `http://localhost:3000/dashboard/${res.data.username}`;
+            window.location.href = `http://localhost:3000/dashboard/${username}`;
           }
         })
         .catch(err => console.log('An error occurred...', err));

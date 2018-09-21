@@ -13,7 +13,7 @@ const ActivityPane = props => (
     />
     <div className='account_activities'>
       <Button cName="btn-account" name="Account"/>
-      <Button cName="btn-account" name="Logout" />
+      <Button cName="btn-account" name="Logout" /> { /* destroy jwt here */}
     </div>
   </div>
 )

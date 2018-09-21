@@ -4,12 +4,12 @@ const mongoose = require('mongoose'),
      _ = require('lodash');
 
 const { User, validateUser } = require('../models/user')
-const auth_mid = require('../middleware/middleware_auth')
+// const auth_mid = require('../middleware/middleware_auth') // User needs to register before we can generate token for them.
 
 const app = express();
 const router = express.Router()
 
-router.post('/', async (req, res) => { // remove auth_mid. I think users get the token after registeration.
+router.post('/', async (req, res) => {
   const { error } = validateUser(req.body)
   if (error) return res.status(400).send(error.details[0].message)
 

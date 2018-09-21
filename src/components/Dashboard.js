@@ -22,17 +22,21 @@ export default class Dashboard extends Component {
   }
 
   componentWillMount = () => {
+    const token = localStorage.getItem('token')
 
     // get user details and update required fields
     Axios({
       method: 'GET',
-      url: 'http://localhost:3300/users'
+      url: 'http://localhost:3001/users/me',
+      headers: {
+        "x-auth-token": token
+      }
     })
       .then(res => {
         if (res.status === 200) {
-          const name = res.data[0].name
-          const username = res.data[0].username
-          const email = res.data[0].email
+          const name = res.data.name
+          const username = res.data.username
+          const email = res.data.email
 
           this.setState(() => ({
             profileDetails: {

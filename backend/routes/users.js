@@ -11,7 +11,7 @@ const router = express.Router()
 
 // Authorization Process
 router.get('/me', auth_mid, async (req, res) => {
-  const user = await User.findById(req.user._id).select('-password') // we should change the password exclusion much later
+const user = await User.findById(req.user._id).select('-password') // we should change the password exclusion much later
   res.send(user)
  })
 

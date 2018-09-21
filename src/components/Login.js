@@ -44,7 +44,9 @@ export default class Login extends Component {
         .then(res => {
           if (res.request.status === 200) {
             const username = res.data.username
-
+            const token = res.data.token
+            
+            localStorage.setItem('token', token)
             // This should not be the standard
             window.location.href = `http://localhost:3000/dashboard/${username}`
             // history.push(`/dashboard/${id}`)

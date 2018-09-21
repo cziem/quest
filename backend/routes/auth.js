@@ -26,6 +26,10 @@ router.post('/', async (req, res) => {
     token,
     username: user.username
   })
+
+  // res.header('x-auth-token', token).json({
+  //   username: user.username
+  // })
 })
 
 const validate = req => {

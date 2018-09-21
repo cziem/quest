@@ -9,7 +9,7 @@ const auth_mid = require('../middleware/middleware_auth')
 const app = express();
 const router = express.Router()
 
-router.post('/', auth_mid, async (req, res) => {
+router.post('/', async (req, res) => { // remove auth_mid. I think users get the token after registeration.
   const { error } = validateUser(req.body)
   if (error) return res.status(400).send(error.details[0].message)
 

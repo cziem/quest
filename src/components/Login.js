@@ -37,16 +37,16 @@ export default class Login extends Component {
 
       Axios({
         // Let's try GET for now in DEV mode
-        method: 'GET',
-        url: 'http://localhost:3300/users',
+        method: 'POST',
+        url: 'http://localhost:3001/auth',
         data: body
       })
         .then(res => {
           if (res.request.status === 200) {
-            const id = res.data[0]._id
+            const username = res.data.username
 
             // This should not be the standard
-            window.location.href = `http://localhost:3001/dashboard/${id}`
+            window.location.href = `http://localhost:3000/dashboard/${username}`
             // history.push(`/dashboard/${id}`)
           }
         })

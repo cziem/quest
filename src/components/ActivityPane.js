@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import UserProfile from './userProfiler/UserProfile';
 import ListItems from './sideBarLists/ListItems';
-import Button from './Button';
 
 const ActivityPane = props => (
   <div className='paneWrapper'>

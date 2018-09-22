@@ -68,7 +68,6 @@ export default class Dashboard extends Component {
   }
 
   render() {
-    console.log(this.state.hasComponent)
     return (
       <div className='dashboard'>
         {/* Activity Panel */}

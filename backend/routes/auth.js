@@ -5,7 +5,6 @@ const mongoose = require('mongoose'),
      _ = require('lodash');
 
 const { User } = require('../models/user')
-// const auth_mid = require('../middleware/middleware_auth')
 
 // const app = express();
 const router = express.Router()

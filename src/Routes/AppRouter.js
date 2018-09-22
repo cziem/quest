@@ -5,6 +5,7 @@ import Login from '../components/Login';
 import Registration from '../components/Registration';
 import NotFound from '../components/NotFound';
 import Dashboard from "../components/Dashboard";
+import Accounts from "../components/Accounts";
 
 const AppRouter = () => (
   <BrowserRouter>
@@ -14,6 +15,7 @@ const AppRouter = () => (
         <Route path="/login" component={Login} exact={true} />
         <Route path="/registration" component={Registration} exact={true} />
         <Route path="/dashboard/:id" component={Dashboard} exact={true} />
+        <Route path="/dashboard/:id/accounts" component={Accounts} exact={true} />
         <Route component={NotFound} />
       </Switch>
     </div>

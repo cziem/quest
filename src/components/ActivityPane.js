@@ -15,7 +15,7 @@ const ActivityPane = props => (
     <div className='account_activities'>
       <button
         className="btn-account"
-        // onClick={handleAccount}
+        onClick={props.handleAccount}
       >
         Account
       </button>

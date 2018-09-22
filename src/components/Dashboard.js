@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Axios from 'axios';
 import ActivityPane from "./ActivityPane";
 import Interactive from "./Interactive";
+import Accounts from "./Accounts";
 import '../styles/Dashboard.css';
 
 export default class Dashboard extends Component {
@@ -13,12 +14,13 @@ export default class Dashboard extends Component {
       username: '',
       email: ''
     },
+    hasComponent: false,
     create: false,
     my_circle: false,
     published: false,
     recent_quotes: false,
     metrics: false,
-    search_users: false
+    search_users: false,
   }
 
   componentWillMount = () => {
@@ -59,7 +61,14 @@ export default class Dashboard extends Component {
     search_users: !prev.search_users
   }))
 
+  handleAccount = () => {
+    this.setState(prevState => ({
+      hasComponent: !prevState.hasComponent
+    }))
+  }
+
   render() {
+    console.log(this.state.hasComponent)
     return (
       <div className='dashboard'>
         {/* Activity Panel */}
@@ -67,9 +76,12 @@ export default class Dashboard extends Component {
           realState={this.state}
           toggleStaate={this.toggleState}
           details={this.state.profileDetails}
+          handleAccount={this.handleAccount}
         />
         <Interactive
           name={this.state.profileDetails}
+          hasComponent={this.state.hasComponent}
+          whichComponent={<Accounts />}
         />
       </div>
     );

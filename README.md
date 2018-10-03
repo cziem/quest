@@ -8,6 +8,14 @@ Quest is an app that helps you be socially healthy while concentrating on doing 
 
 > Write one, share for all
 
+##  Developers Usage Guide
+
+After cloning the repo
+
+* `npm install` or `yarn install`
+* `npm start` or `yarn start`
+* `npm run serve` or `yarn serve` to start the server.
+
 ## Usage
 
 All you have to do is very simple:
@@ -44,13 +52,5 @@ Issues will be labelled appropraitely. If you are a newbie you should look out f
 ## Moderation
 
 We love to have everyone work and interact peacefully and with no resentments. We emplore you to read the [code of conduct](./CODE_OF_CONDUCT.md)
-
-## Developers Usage Guide
-
-After cloning the repo
-
-* `npm install` or `yarn install`
-* `npm start` or `yarn start`
-* `npm run serve` or `yarn serve` to start the server.
 
 Have fun. 😄 🤐
